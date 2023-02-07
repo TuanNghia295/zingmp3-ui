@@ -1,0 +1,85 @@
+.wrapper {
+    --sidebar-bg: hsla(0, 0%, 100%, 0.05);
+    --siderbar-width: 240px;
+    --sidebar-text: #dadada;
+    background-color: var(--sidebar-bg);
+    position: relative;
+    width: var(--siderbar-width);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    padding-top: 70px;
+    padding-bottom: 54px;
+}
+
+//LOGO
+.logo-container {
+    width: var(--siderbar-width);
+    padding: 0 25px 0 28px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    height: 70px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo {
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    background: var(--zingmp3-logo) 50% / contain no-repeat;
+}
+
+// Sidebar
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    color: var(--sidebar-text);
+}
+
+.sidebar-list {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.sidbar-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 25px;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+
+    &:hover {
+        background-color: #393243;
+        color: white;
+        border-color: #9b4de0;
+    }
+
+    &:hover .play-icon{
+        display: block;
+    }
+}
+
+.sidbar-item > a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.play-icon {
+    flex: 1;
+    position: absolute;
+    right: 0;
+    padding: 0 20px;
+    display: none;
+}
