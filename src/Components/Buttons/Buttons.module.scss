@@ -1,0 +1,33 @@
+.wrapper {
+}
+
+.primary {
+    border-radius: 999px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 6px 35px;
+
+    &:hover {
+        background-color: hsla(0, 0%, 100%, 0.1);
+        opacity: 0.8;
+        border: 1px solid white;
+    }
+}
+
+.golden {
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background-color: #ffdb00;
+    color: black;
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 6px 35px;
+
+    &:hover {
+        filter: brightness(0.9);
+        border: 1px solid transparent;
+    }
+}

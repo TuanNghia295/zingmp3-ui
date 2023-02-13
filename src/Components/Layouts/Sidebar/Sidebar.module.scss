@@ -42,12 +42,33 @@
     color: var(--sidebar-text);
 }
 
-.sidebar-list {
+.sidebar-container,
+.sidebar-trending-container {
     position: relative;
     margin-bottom: 15px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        right: 25px;
+        left: 25px;
+        height: 1px;
+        background-color: #333;
+    }
 }
 
-.sidbar-item {
+.sidebar-trending-container::after {
+    right: 0;
+    left: 0;
+}
+
+.sidebar-list,
+.trending-list {
+}
+
+.sidbar-item,
+.trending-item {
     display: flex;
     align-items: center;
     padding: 8px 25px;
@@ -60,12 +81,13 @@
         border-color: #9b4de0;
     }
 
-    &:hover .play-icon{
-        display: block;
+    &:hover .play-icon {
+        display: inline-block;
     }
 }
 
-.sidbar-item > a {
+.sidbar-item,
+.trending-item > a {
     text-decoration: none;
     font-size: 13px;
     font-weight: 700;
@@ -82,4 +104,40 @@
     right: 0;
     padding: 0 20px;
     display: none;
+}
+
+// Buttons
+
+.login-container {
+    // height: 200px;
+    // overflow: scroll;
+}
+
+.title {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.Login {
+    background-color: #9b4de0;
+    margin: 15px 20px 10px;
+    padding: 15px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.Vip {
+    background-color: #9b4de0;
+    margin: 15px 20px 10px;
+    padding: 15px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;
 }
