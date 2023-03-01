@@ -4,6 +4,10 @@
 :root {
     --zingmp3-logo: url('https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg');
     --background-layout-color: #170f23;
+    --livestream-logo: url('https://zjs.zmdcdn.me/zmp3-desktop/dev/147506/static/media/live-tag.e25dd240.svg');
+    --text-placeholder: #dadada;
+    --search-bg: hsla(0, 0%, 100%, 0.1);
+    --sidebar-bg: hsla(0, 0%, 100%, 0.05);
 }
 
 * {
@@ -24,12 +28,15 @@ body {
 }
 
 button,
+input,
 [tabindex] {
-    border: none transparent;
+    border: 1px solid transparent;
     outline: none;
 }
 
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }

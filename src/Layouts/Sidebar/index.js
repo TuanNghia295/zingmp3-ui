@@ -8,13 +8,23 @@ import {
     faMusic,
     faPager,
     faPlay,
+    faPlus,
     faRadio,
     faTv,
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar } from '@fortawesome/free-regular-svg-icons';
 import Buttons from '~/Components/Buttons';
-import { Usericon, Discovery, Follow, Radio, Chart, Types, MV } from '~/Components/icons';
+import {
+    Usericon,
+    Discovery,
+    Follow,
+    Radio,
+    Chart,
+    Types,
+    MV,
+    MusicIcon,
+    StarIcon,
+} from '~/Components/icons';
 const cx = classNames.bind(styles);
 const sideBarContents = [
     {
@@ -34,6 +44,11 @@ const sideBarContents = [
         title: 'Radio',
         icons: <Radio />,
         play: <FontAwesomeIcon icon={faPlay}></FontAwesomeIcon>,
+        liveStream: (
+            <span className={cx('liveStream-btn')}>
+                <img src="https://zjs.zmdcdn.me/zmp3-desktop/dev/147506/static/media/live-tag.e25dd240.svg"></img>
+            </span>
+        ),
     },
     {
         title: 'Theo Dõi',
@@ -44,7 +59,7 @@ const sideBarContents = [
 const trendings = [
     {
         title: 'Nhạc Mới',
-        icons: <FontAwesomeIcon icon={faMusic}></FontAwesomeIcon>,
+        icons: <MusicIcon />,
         play: <FontAwesomeIcon icon={faPlay}></FontAwesomeIcon>,
     },
     {
@@ -53,7 +68,7 @@ const trendings = [
     },
     {
         title: 'Top 100',
-        icons: <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>,
+        icons: <StarIcon />,
     },
     {
         title: 'MV',
@@ -63,10 +78,11 @@ const trendings = [
 
 function Sidebar() {
     return (
-        <div className={cx('wrapper')}>
+        <aside className={cx('wrapper')}>
             <div className={cx('logo-container')}>
                 <button className={cx('logo')}></button>
             </div>
+
             <div className={cx('sidebar-content')}>
                 <div className={cx('sidebar-container')}>
                     <ul className={cx('sidebar-list')}>
@@ -76,6 +92,7 @@ function Sidebar() {
                                     <a href="" title={item.title}>
                                         <i className={cx('icon')}>{item.icons}</i>
                                         {item.title}
+                                        {item.liveStream}
                                         <i className={cx('play-icon')}>{item.play}</i>
                                     </a>
                                 </li>
@@ -117,8 +134,17 @@ function Sidebar() {
                         </div>
                     </div>
                 </div>
+
+                <div className={cx('newPlayList-container')}>
+                    <Buttons
+                        lefIcon={<FontAwesomeIcon icon={faPlus} />}
+                        className={cx('newPlayList')}
+                    >
+                        <div className={cx('Playlist-title')}>Tạo playlist mới</div>
+                    </Buttons>
+                </div>
             </div>
-        </div>
+        </aside>
     );
 }
 

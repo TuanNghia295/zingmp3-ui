@@ -1,7 +1,15 @@
-const Usericon = ({ className, height = '2rem', width = '2rem' }) => (
+import { faRainbow } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classNames from 'classnames/bind';
+import styles from './icons.module.scss';
+import { forwardRef } from 'react';
+const cx = classNames.bind(styles);
+
+const Usericon = forwardRef(({ className, height = '2rem', width = '2rem' }, ref) => (
     <svg
         width={width}
         height={height}
+        ref={ref}
         viewBox="0 0 20 20"
         fill="currentColor"
         className={className}
@@ -12,7 +20,7 @@ const Usericon = ({ className, height = '2rem', width = '2rem' }) => (
             d="M5.41666 2.29166C5.07148 2.29166 4.79166 2.57148 4.79166 2.91666C4.79166 3.26183 5.07148 3.54166 5.41666 3.54166H14.5833C14.9285 3.54166 15.2083 3.26183 15.2083 2.91666C15.2083 2.57148 14.9285 2.29166 14.5833 2.29166H5.41666ZM2.5 8.33333C2.5 6.60744 3.89911 5.20833 5.625 5.20833H14.375C16.1009 5.20833 17.5 6.60744 17.5 8.33333V14.1667C17.5 15.8925 16.1009 17.2917 14.375 17.2917H5.625C3.89911 17.2917 2.5 15.8925 2.5 14.1667V8.33333ZM5.625 6.45833C4.58947 6.45833 3.75 7.29779 3.75 8.33333V14.1667C3.75 15.2022 4.58946 16.0417 5.625 16.0417H14.375C15.4105 16.0417 16.25 15.2022 16.25 14.1667V8.33333C16.25 7.29779 15.4105 6.45833 14.375 6.45833H5.625ZM12.5 7.3C11.3494 7.3 10.4166 8.23274 10.4166 9.38333V10.8832C10.1041 10.7235 9.75006 10.6333 9.37496 10.6333C8.10931 10.6333 7.0833 11.6594 7.0833 12.925C7.0833 14.1907 8.10931 15.2167 9.37496 15.2167C10.5759 15.2167 11.561 14.293 11.6587 13.1173C11.6639 13.0847 11.6666 13.0513 11.6666 13.0173V9.38333C11.6666 8.92309 12.0397 8.55 12.5 8.55H13.2291C13.5743 8.55 13.8541 8.27018 13.8541 7.925C13.8541 7.57982 13.5743 7.3 13.2291 7.3H12.5ZM8.3333 12.925C8.3333 12.3497 8.79967 11.8833 9.37496 11.8833C9.95026 11.8833 10.4166 12.3497 10.4166 12.925C10.4166 13.5003 9.95026 13.9667 9.37496 13.9667C8.79967 13.9667 8.3333 13.5003 8.3333 12.925Z"
         ></path>
     </svg>
-);
+));
 
 const Discovery = ({ className, height = '2rem', width = '2rem' }) => (
     <svg
@@ -134,4 +142,159 @@ const MV = ({ className, height = '2rem', width = '2rem' }) => (
         <path d="M5.00418 7.7425C5.07418 7.7425 5.14668 7.7625 5.22168 7.8025C5.30168 7.8375 5.36168 7.885 5.40168 7.945L7.22417 10.75L6.84917 10.735L8.71667 7.945C8.81167 7.81 8.93417 7.7425 9.08417 7.7425C9.20417 7.7425 9.31167 7.785 9.40667 7.87C9.50167 7.955 9.54917 8.065 9.54917 8.2V12.5425C9.54917 12.6725 9.50667 12.7825 9.42167 12.8725C9.33667 12.9575 9.22417 13 9.08417 13C8.94417 13 8.82917 12.9575 8.73917 12.8725C8.65417 12.7825 8.61167 12.6725 8.61167 12.5425V9.01L8.90417 9.0775L7.37417 11.41C7.32917 11.465 7.27167 11.5125 7.20167 11.5525C7.13667 11.5925 7.06917 11.61 6.99917 11.605C6.93417 11.61 6.86667 11.5925 6.79667 11.5525C6.73167 11.5125 6.67667 11.465 6.63167 11.41L5.19918 9.145L5.39418 8.7475V12.5425C5.39418 12.6725 5.35418 12.7825 5.27418 12.8725C5.19418 12.9575 5.08918 13 4.95918 13C4.83418 13 4.73168 12.9575 4.65168 12.8725C4.57168 12.7825 4.53168 12.6725 4.53168 12.5425V8.2C4.53168 8.075 4.57668 7.9675 4.66668 7.8775C4.76168 7.7875 4.87418 7.7425 5.00418 7.7425ZM15.3425 7.735C15.4675 7.735 15.575 7.7775 15.665 7.8625C15.76 7.9425 15.8075 8.045 15.8075 8.17C15.8075 8.235 15.7925 8.3025 15.7625 8.3725L13.91 12.7075C13.865 12.8075 13.8 12.8825 13.715 12.9325C13.635 12.9775 13.5525 13 13.4675 13C13.3875 12.995 13.31 12.97 13.235 12.925C13.16 12.875 13.1025 12.805 13.0625 12.715L11.21 8.365C11.195 8.335 11.185 8.305 11.18 8.275C11.175 8.24 11.1725 8.2075 11.1725 8.1775C11.1725 8.0325 11.225 7.9225 11.33 7.8475C11.435 7.7675 11.535 7.7275 11.63 7.7275C11.82 7.7275 11.9575 7.825 12.0425 8.02L13.685 11.8825L13.4225 11.89L14.93 8.02C15.015 7.83 15.1525 7.735 15.3425 7.735Z"></path>
     </svg>
 );
-export { Usericon, Discovery, Chart, Radio, Follow, Types, MV };
+
+const MusicIcon = ({ className, height = '2rem', width = '2rem' }) => (
+    <svg
+        width={width}
+        height={height}
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        className={className}
+    >
+        <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M17.7081 2.91666C17.7081 2.73624 17.6302 2.56463 17.4943 2.44594C17.3584 2.32725 17.1779 2.27308 16.9991 2.29734L10.0928 3.23457L10.0766 3.23699C8.54161 3.48647 7.29148 4.91079 7.29148 6.45832V12.0831C6.7692 11.6908 6.12 11.4583 5.4165 11.4583C3.69061 11.4583 2.2915 12.8574 2.2915 14.5833C2.2915 16.3092 3.69061 17.7083 5.4165 17.7083C7.14239 17.7083 8.5415 16.3092 8.5415 14.5833C8.5415 14.486 8.53705 14.3898 8.52835 14.2947C8.53696 14.2534 8.54148 14.2105 8.54148 14.1667V6.45832C8.54148 5.54773 9.32148 4.63027 10.2696 4.47203L16.4581 3.63221V10.4165C15.9359 10.0241 15.2866 9.79166 14.5831 9.79166C12.8572 9.79166 11.4581 11.1908 11.4581 12.9167C11.4581 14.6425 12.8572 16.0417 14.5831 16.0417C16.3066 16.0417 17.7042 14.6465 17.7081 12.924C17.7081 12.9215 17.7081 12.9191 17.7081 12.9167V2.91666ZM14.5831 11.0417C13.5476 11.0417 12.7081 11.8811 12.7081 12.9167C12.7081 13.9522 13.5476 14.7917 14.5831 14.7917C15.6186 14.7917 16.4581 13.9522 16.4581 12.9167C16.4581 11.8811 15.6186 11.0417 14.5831 11.0417ZM5.4165 12.7083C4.38097 12.7083 3.5415 13.5478 3.5415 14.5833C3.5415 15.6189 4.38097 16.4583 5.4165 16.4583C6.45204 16.4583 7.2915 15.6189 7.2915 14.5833C7.2915 13.5478 6.45204 12.7083 5.4165 12.7083Z"
+        ></path>
+    </svg>
+);
+
+const StarIcon = ({ className, height = '2rem', width = '2rem' }) => (
+    <svg
+        width={width}
+        height={height}
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        className={className}
+    >
+        <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M9.99995 14.1666L5.84903 16.3489C5.54335 16.5096 5.18609 16.2501 5.24446 15.9097L6.03722 11.2876L2.67905 8.01415C2.43175 7.77309 2.56821 7.3531 2.90997 7.30344L7.55085 6.62908L9.62631 2.42373C9.77915 2.11405 10.2208 2.11405 10.3736 2.42373L12.4491 6.62908L17.0899 7.30344C17.4317 7.3531 17.5682 7.77309 17.3209 8.01415L13.9627 11.2876L14.7554 15.9097C14.8138 16.2501 14.4566 16.5096 14.1509 16.3489L9.99995 14.1666Z"
+            stroke="currentColor"
+            strokeWidth="1.25"
+        ></path>
+    </svg>
+);
+
+const Download = ({ className, height = '2rem', width = '2rem' }) => (
+    <svg
+        width={width}
+        height={height}
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        className={className}
+    >
+        <defs>
+            <linearGradient id="j32lhg93hd" x1="62.206%" x2="18.689%" y1="70.45%" y2="39.245%">
+                <stop offset="0%" stopColor="#F81212"></stop>
+                <stop offset="100%" stopColor="red"></stop>
+            </linearGradient>
+            <linearGradient id="hjoavsus6g" x1="50%" x2="11.419%" y1="23.598%" y2="71.417%">
+                <stop offset="0%" stopColor="#00F"></stop>
+                <stop offset="100%" stopColor="#0031FF"></stop>
+            </linearGradient>
+            <linearGradient id="la1y5u3dvi" x1="65.655%" x2="25.873%" y1="18.825%" y2="56.944%">
+                <stop offset="0%" stopColor="#FFA600"></stop>
+                <stop offset="100%" stopColor="orange"></stop>
+            </linearGradient>
+            <linearGradient id="2dsmrlvdik" x1="24.964%" x2="63.407%" y1="8.849%" y2="55.625%">
+                <stop offset="0%" stopColor="#13EFEC"></stop>
+                <stop offset="100%" stopColor="#00E8DF"></stop>
+            </linearGradient>
+            <filter
+                id="4a7imk8mze"
+                width="230%"
+                height="230%"
+                x="-65%"
+                y="-65%"
+                filterUnits="objectBoundingBox"
+            >
+                <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+            </filter>
+            <filter
+                id="301mo6jeah"
+                width="312.7%"
+                height="312.7%"
+                x="-106.4%"
+                y="-106.4%"
+                filterUnits="objectBoundingBox"
+            >
+                <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+            </filter>
+            <filter
+                id="b2zvzgq7fj"
+                width="295%"
+                height="295%"
+                x="-97.5%"
+                y="-97.5%"
+                filterUnits="objectBoundingBox"
+            >
+                <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+            </filter>
+            <filter
+                id="a1wq161tvl"
+                width="256%"
+                height="256%"
+                x="-78%"
+                y="-78%"
+                filterUnits="objectBoundingBox"
+            >
+                <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+            </filter>
+            <path
+                id="qtpqrj1oda"
+                d="M3.333 14.167V5.833l-1.666.834L0 3.333 3.333 0h3.334c.04 1.57.548 2.4 1.524 2.492l.142.008C9.403 2.478 9.958 1.645 10 0h3.333l3.334 3.333L15 6.667l-1.667-.834v8.334h-10z"
+            ></path>
+            <path id="jggzvnjgfc" d="M0 0H20V20H0z"></path>
+            <path
+                id="2eiwxjmc7m"
+                d="M3.333 14.167V5.833l-1.666.834L0 3.333 3.333 0h3.334c.04 1.57.548 2.4 1.524 2.492l.142.008C9.403 2.478 9.958 1.645 10 0h3.333l3.334 3.333L15 6.667l-1.667-.834v8.334h-10z"
+            ></path>
+        </defs>
+        <g fill="none" fillRule="evenodd" transform="translate(2 3)">
+            <mask id="tinejqaasb" fill="#fff"></mask>
+            <use fill="#FFF" fillOpacity="0"></use>
+            <g mask="url(#tinejqaasb)">
+                <g transform="translate(-2 -3)">
+                    <mask id="uf3ckvfvpf" fill="#fff"></mask>
+                    <use fill="#D8D8D8"></use>
+                    <circle
+                        cx="8.9"
+                        cy="6.8"
+                        r="9"
+                        fill="url(#j32lhg93hd)"
+                        filter="url(#4a7imk8mze)"
+                        mask="url(#uf3ckvfvpf)"
+                    ></circle>
+                    <circle
+                        cx="9.3"
+                        cy="13.7"
+                        r="5.5"
+                        fill="url(#hjoavsus6g)"
+                        filter="url(#301mo6jeah)"
+                        mask="url(#uf3ckvfvpf)"
+                    ></circle>
+                    <circle
+                        cx="15.9"
+                        cy="6.9"
+                        r="6"
+                        fill="url(#la1y5u3dvi)"
+                        filter="url(#b2zvzgq7fj)"
+                        mask="url(#uf3ckvfvpf)"
+                    ></circle>
+                    <circle
+                        cx="16.4"
+                        cy="17.7"
+                        r="7.5"
+                        fill="url(#2dsmrlvdik)"
+                        filter="url(#a1wq161tvl)"
+                        mask="url(#uf3ckvfvpf)"
+                    ></circle>
+                </g>
+            </g>
+            <use fill="#FFF" fillOpacity="0.05"></use>
+        </g>
+    </svg>
+);
+export { Usericon, Discovery, Chart, Radio, Follow, Types, MV, MusicIcon, StarIcon, Download };
