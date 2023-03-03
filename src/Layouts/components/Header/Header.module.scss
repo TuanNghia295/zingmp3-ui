@@ -1,0 +1,48 @@
+.header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    min-width: 660px;
+    top: 0;
+    left: 240px;
+    right: 0;
+    padding: 0 59px;
+    transition: right 0.5s;
+    background-color: var(--background-layout-color);
+    opacity: 0.9;
+}
+
+.container {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.level-left-container {
+    display: flex;
+    position: relative;
+}
+
+.next-pre-btn {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.left-btn,
+.right-btn {
+    font-size: 2rem;
+    margin-right: 10px;
+    opacity: 0.5;
+}
+
+.right-btn {
+}
+
+.DownloadBtn {
+}
+
+.level-container {
+    display: flex;
+}
